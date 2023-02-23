@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>lighttingBox</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/lightBox.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-color: rgb(43, 52, 82); */
+      /* background: url("img/star1.jpg"); */
+    }
+
+    .text {
+      font-family: 'fangsong';
+      display: inline-block;
+      position: relative;
+      font-size: 40px;
+      height: 60px;
+      line-height: 60px;
+      color: rgb(245, 245, 245);
+    }
+
+    .text::after {
+      content: '';
+      position: absolute;
+      /* right: -10px;
+      top: 5px; */
+      height: 50px;
+      width: 3px;
+      background-color: #fff;
+      animation: san 0.5s steps(1) infinite;
+    }
+
+    @keyframes san {
+
+      0%,
+      100% {
+        background-color: #fff;
+      }
+
+      50% {
+        background-color: transparent;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="bg">
+    <h1>
+      <!-- <span class="text" style="width: 50%;"></span> -->
+    </h1>
+    <div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+
+    </div>
+  </div>
+
+  <script>
+    // const text = document.querySelector('.text');
+    // const txt = "2003班的学弟学妹们:<br>  &emsp;&emsp;你们现在手里拿着的笔，一笔一划写出来的都是自己人生的答案。祝你们高考加油，金榜题名，此去星辰大海，前程锦绣如画。";
+    // var index = 0;
+    // setInterval(function () {
+    //   if (index < txt.length) {
+    //     text.innerHTML = txt.slice(0, ++index);
+    //   }
+    //   else {
+    //     console.log(index);
+    //   }
+    // }, 200);
+
+    (function () {
+      var a_idx = 0;
+      window.onclick = function (event) {
+        var a = new Array("书山高百尺，手可摘星辰", "关关难过关关过，前路漫漫亦灿灿", "2003班加油", "愿你们合上笔盖的那一刻，有展示收刀入鞘的骄傲", "你的名字这么好听，一定要出现在录取通知书上", "愿你所得，皆你所愿", "星光不负赶路人", "时光不负有心人", "若你决定灿烂，山无遮，海无拦", "希望我们都在各自的未来里闪闪发光", "愿你苦尽甘来的那一天，山河星月都做贺礼", "让未来的你，感谢现在的自己", "相信小包，他曾将学长学姐们送入大学的校园", "带着梦想一起奔跑， 带着努力一起成长", "希君生羽翼，一化北溟鱼", "去见，从未见过的风景",
+          "躲起来的星星也在努力发光 你也要加油", "金榜题名", "以梦为马", "不负韶华", "以笔为戎，挥斥方遒", "高考必胜!");
+
+        var heart = document.createElement("b"); //创建b元素
+        heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+
+        document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+        a_idx = (a_idx + 1) % a.length;
+        heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+
+        var f = 16, // 字体大小
+          x = event.clientX - f / 2, // 横坐标
+          y = event.clientY - f, // 纵坐标
+          c = randomColor(), // 随机颜色
+          a = 1, // 透明度
+          s = 1.2; // 放大缩小
+
+        var timer = setInterval(function () { //添加定时器
+          if (a <= 0) {
+            document.body.removeChild(heart);
+            clearInterval(timer);
+          } else {
+            heart.style.cssText = "font-family: '华文微软';text-shadow: 0 0 0px #fff,0 0 1px #fff,0 0 3px #fff,0 0 5px #fff;font-size:16px;cursor: default;position: fixed;color:" +
+              c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+              s + ");";
+
+            y--;
+            a -= 0.016;
+            s += 0.002;
+          }
+        }, 15)
+
+      }
+      // 随机颜色
+      function randomColor() {
+        return "rgb(" + ((Math.random() * 255 * 1.1)) + "," + ((Math.random() * 255 * 1.1)) + "," + ((Math
+          .random() * 255 * 1.1)) + ")";
+
+      }
+    }());
+    $(document).ready(function () {
+      var $box = $(".box");
+      var div = document.createElement("div");
+      div.className = "light";
+      $box.append(div);
+      var $light = $(".light");
+      $(".light").each(function () {
+        var a = 5;
+        $(this).css({
+          width: a + "px",
+          height: a + "px",
+          background: "rgba(250,250,250,0.8)",
+          // background: "rgba(" + Math.random() * 10 + "," + Math.random() * 150 + "," + Math.random() * 200 + "," + Math.random() * 5 + ")",
+          top: Math.random() * 100 + "vh",
+          left: Math.random() * 1000 + "vh",
+          boxShadow: "10 0 " + Math.random() * 100 + "px rgba(101,117,7," + Math.random() * 1 + ")"
+        })
+      })
+      var light = document.getElementsByClassName("light");
+      var box = document.getElementsByClassName("box");
+      var w = 0;
+      var time = setInterval(function () {
+        light[w].style.animation = "moveX 6s linear infinite";
+        box[w].style.animation = "moveY 30s linear infinite";
+        w++;
+        if (w >= box.length) {
+
+          clearInterval(time);
+        }
+      }, 10)
+    })
+  </script>
+</body>
+
+</html>
