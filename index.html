@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>lighttingBox</title>
+  <title>高考加油</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/jquery.min.js"></script>
@@ -64,10 +64,11 @@
 </head>
 
 <body>
-  <audio autoplay="autoplay" loop="loop" preload="auto"
+  <!-- <audio autoplay="autoplay" loop="loop" preload="auto"
     src="http://m801.music.126.net/20230224153638/8481772ce80eed9d9fbbef20dad9ca8c/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/10064470555/82ca/f07a/3282/f9c72ce10c48cc7800ee7d08892f938e.mp3">
+  </audio> -->
+  <audio autoplay="autoplay" loop="loop" preload="auto" src="./asset/逗仔 - 纪念.mp3">
   </audio>
-
   <div id="bg">
     <div class="textBox">
       <span class="text" style="width: 50%;"></span>
@@ -363,6 +364,7 @@
   <script>
     const text = document.querySelector('.text');
     const textBox = document.querySelector('.textBox');
+    const audio = document.querySelector("audio")
     const bg = document.getElementById('bg')
     var colorList = ['white', '#f496ba', '#9a9cff', '#4ca2d7'];
     var i = ~~(Math.random() * colorList.length)
@@ -379,23 +381,24 @@
         textBox.style.display = 'none';
         bg.className = "bg-img";
         clearInterval(timer);
-        flag = true
       }
     }, 300);
 
     (function () {
+      // audio.play()
+      // console.log(audio);
       var a_idx = 0;
       var bgIndex = 0, bgTimer = 0;
       // 背景图片
       setInterval(() => {
         // console.log(timer);
-        if (flag) {
-          if (bgIndex >= classNameList.length) {
-            bgIndex = 0
-          }
-          console.log(bgIndex);
-          bg.className = classNameList[bgIndex++];
+
+        if (bgIndex >= classNameList.length) {
+          bgIndex = 0
         }
+        console.log(bgIndex);
+        bg.className = classNameList[bgIndex++];
+
       }, 20000)
       // 点击生成
       window.onclick = function (event) {
