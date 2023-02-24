@@ -392,13 +392,13 @@
       // 背景图片
       setInterval(() => {
         // console.log(timer);
-
-        if (bgIndex >= classNameList.length) {
-          bgIndex = 0
+        if (flag) {
+          if (bgIndex >= classNameList.length) {
+            bgIndex = 0
+          }
+          console.log(bgIndex);
+          bg.className = classNameList[bgIndex++];
         }
-        console.log(bgIndex);
-        bg.className = classNameList[bgIndex++];
-
       }, 20000)
       // 点击生成
       window.onclick = function (event) {
