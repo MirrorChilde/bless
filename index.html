@@ -16,7 +16,11 @@
       box-sizing: border-box;
     }
 
-    body {
+    .textBox {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-25%, -50%);
       /* height: 100vh;
       display: flex;
       justify-content: center;
@@ -38,8 +42,6 @@
     .text::after {
       content: '';
       position: absolute;
-      /* right: -10px;
-      top: 5px; */
       height: 50px;
       width: 3px;
       background-color: #fff;
@@ -62,10 +64,14 @@
 </head>
 
 <body>
+  <audio autoplay="autoplay" loop="loop" preload="auto"
+    src="http://m801.music.126.net/20230224153638/8481772ce80eed9d9fbbef20dad9ca8c/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/10064470555/82ca/f07a/3282/f9c72ce10c48cc7800ee7d08892f938e.mp3">
+  </audio>
+
   <div id="bg">
-    <h1>
-      <!-- <span class="text" style="width: 50%;"></span> -->
-    </h1>
+    <div class="textBox">
+      <span class="text" style="width: 50%;"></span>
+    </div>
     <div>
       <div class="box"></div>
       <div class="box"></div>
@@ -355,20 +361,43 @@
   </div>
 
   <script>
-    // const text = document.querySelector('.text');
-    // const txt = "2003班的学弟学妹们:<br>  &emsp;&emsp;你们现在手里拿着的笔，一笔一划写出来的都是自己人生的答案。祝你们高考加油，金榜题名，此去星辰大海，前程锦绣如画。";
-    // var index = 0;
-    // setInterval(function () {
-    //   if (index < txt.length) {
-    //     text.innerHTML = txt.slice(0, ++index);
-    //   }
-    //   else {
-    //     console.log(index);
-    //   }
-    // }, 200);
+    const text = document.querySelector('.text');
+    const textBox = document.querySelector('.textBox');
+    const bg = document.getElementById('bg')
+    var colorList = ['white', '#f496ba', '#9a9cff', '#4ca2d7'];
+    var i = ~~(Math.random() * colorList.length)
+    var classNameList = ["bg-img2", "bg-img"]
+    var flag = false;
+    // const txt = "20";
+    const txt = "2003班的学弟学妹们:<br>  &emsp;&emsp;你们现在手里拿着的笔，一笔一划写出来的都是自己人生的答案。祝你们六月高考加油，金榜题名，此去星辰大海，前程锦绣如画...";
+    var index = 0;
+    var timer = setInterval(function () {
+      if (index < txt.length) {
+        text.innerHTML = txt.slice(0, ++index);
+      }
+      else {
+        textBox.style.display = 'none';
+        bg.className = "bg-img";
+        clearInterval(timer);
+        flag = true
+      }
+    }, 300);
 
     (function () {
       var a_idx = 0;
+      var bgIndex = 0, bgTimer = 0;
+      // 背景图片
+      setInterval(() => {
+        // console.log(timer);
+        if (flag) {
+          if (bgIndex >= classNameList.length) {
+            bgIndex = 0
+          }
+          console.log(bgIndex);
+          bg.className = classNameList[bgIndex++];
+        }
+      }, 10000)
+      // 点击生成
       window.onclick = function (event) {
         var a = new Array("书山高百尺，手可摘星辰", "关关难过关关过，前路漫漫亦灿灿", "2003班加油", "愿你们合上笔盖的那一刻，有展示收刀入鞘的骄傲", "你的名字这么好听，一定要出现在录取通知书上", "愿你所得，皆你所愿", "星光不负赶路人", "时光不负有心人", "若你决定灿烂，山无遮，海无拦", "希望我们都在各自的未来里闪闪发光", "愿你苦尽甘来的那一天，山河星月都做贺礼", "让未来的你，感谢现在的自己", "相信小包，他曾将学长学姐们送入大学的校园", "带着梦想一起奔跑， 带着努力一起成长", "希君生羽翼，一化北溟鱼", "去见，从未见过的风景",
           "躲起来的星星也在努力发光 你也要加油", "金榜题名", "以梦为马", "不负韶华", "以笔为戎，挥斥方遒", "高考必胜!");
@@ -386,16 +415,14 @@
           c = randomColor(), // 随机颜色
           a = 1, // 透明度
           s = 1.2; // 放大缩小
-
         var timer = setInterval(function () { //添加定时器
           if (a <= 0) {
             document.body.removeChild(heart);
             clearInterval(timer);
           } else {
-            heart.style.cssText = "font-family: '华文微软';text-shadow: 0 0 0px #fff,0 0 1px #fff,0 0 3px #fff,0 0 5px #fff;font-size:16px;cursor: default;position: fixed;color:" +
+            heart.style.cssText = "font-family: '华文微软';text-shadow:0px 0px 25px " + c + ";font-size:16px;cursor: default;position: fixed;color:" +
               c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
               s + ");";
-
             y--;
             a -= 0.016;
             s += 0.002;
@@ -405,8 +432,8 @@
       }
       // 随机颜色
       function randomColor() {
-        return "rgb(" + ((Math.random() * 255 * 1.1)) + "," + ((Math.random() * 255 * 1.1)) + "," + ((Math
-          .random() * 255 * 1.1)) + ")";
+        return "rgb(" + (~~(Math.random() * 255)) + "," + ~~((Math.random() * 255)) + "," + (~~(Math
+          .random() * 255)) + ")";
 
       }
     }());
@@ -417,15 +444,15 @@
       $box.append(div);
       var $light = $(".light");
       $(".light").each(function () {
-        var a = 5;
+        var a = 6;
         $(this).css({
           width: a + "px",
           height: a + "px",
-          background: "rgba(250,250,250,0.8)",
+          background: colorList[i],
           // background: "rgba(" + Math.random() * 10 + "," + Math.random() * 150 + "," + Math.random() * 200 + "," + Math.random() * 5 + ")",
           top: Math.random() * 100 + "vh",
           left: Math.random() * 1000 + "vh",
-          boxShadow: "10 0 " + Math.random() * 100 + "px rgba(101,117,7," + Math.random() * 1 + ")"
+          boxShadow: "10 0 " + Math.random() * 100 + "px rgba(255,255,255," + Math.random() * 1 + ")"
         })
       })
       var light = document.getElementsByClassName("light");
